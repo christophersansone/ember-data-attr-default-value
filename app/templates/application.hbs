@@ -1,7 +1,14 @@
-{{page-title "AttrBug"}}
+<h1>Ember Data @attr defaultValue Bug Reproduction</h1>
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+<p>Attribute Value: {{this.post.likes}}</p>
+<p>Serialized Value: {{this.serialized.data.attributes.likes}}</p>
 
-{{outlet}}
+<p>
+  Set Attribute Value:
+  <Input @value={{this.manualValue}} />
+  <button {{on 'click' this.setManualValue}}>Set</button>
+</p>
+
+<button {{on 'click' this.serialize}}>Re-serialize</button>
+
+<button {{on 'click' this.reset}}>Reset</button>
